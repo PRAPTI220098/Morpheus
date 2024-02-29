@@ -20,7 +20,7 @@ def MyApp():
     output.put_html('<center><h1 style="color:#3498db; text-shadow: 0 0 10px #3498db, 0 0 20px #3498db, 0 0 30px #3498db, 0 0 40px #3498db, 0 0 50px #3498db; -webkit-text-stroke: 1px black;">Welcome To The <span style="color:#e74c3c; -webkit-text-stroke: 1px black;">Sanchit</span> Bomber Website !</h1></center>').style('color:#e74c3c; font-weight:bold')
 
     mm = input.input_group('This Are Our Collection', [
-        input.radio('Choose What You Want:', options=['Call Bomber', 'Sms Bomber', 'Custom Sms Bomber', 'Upi Bomber'], name='meth')
+        input.radio('Choose What You Want:', options=['Call Bomber', 'Sms Bomber', 'Custom Sms Bomber'], name='meth')
     ])
 
     method = mm['meth']
@@ -94,7 +94,7 @@ def MyApp():
                 scroll()
                 time.sleep(0.1)
                 
-    elif method == 'Upi Bomber':
+    '''elif method == 'Upi Bomber':
             head = {'x-hs-request-id':'4f0a68-7324f1-78ac40-227721',
             'x-hs-usertoken':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IiIsImF1ZCI6InVtX2FjY2VzcyIsImV4cCI6MTcwOTIyNTA4NiwiaWF0IjoxNzA5MTM4Njg2LCJpc3MiOiJUUyIsImp0aSI6IjI3MTg4OGRjYWIzMDRkNDg4MzBmODQ5MGE4YzFmMjkyIiwic3ViIjoie1wiaElkXCI6XCI0YTI5MzYzZGRmNTc0ZDg1OTkzYmE3OGVmM2Q0N2E2ZVwiLFwicElkXCI6XCI5NWFlMmZiMzk5MmI0MzczYWFjNDE3NjVhNzczYmQ4NFwiLFwibmFtZVwiOlwiWW91XCIsXCJwaG9uZVwiOlwiNjI2MzA3OTk0NVwiLFwiaXBcIjpcIjE3MS42MC4xOTMuNzBcIixcImNvdW50cnlDb2RlXCI6XCJpblwiLFwiY3VzdG9tZXJUeXBlXCI6XCJudVwiLFwidHlwZVwiOlwicGhvbmVcIixcImlzRW1haWxWZXJpZmllZFwiOmZhbHNlLFwiaXNQaG9uZVZlcmlmaWVkXCI6dHJ1ZSxcImRldmljZUlkXCI6XCJlOTdiYS00YmRmNGYtMmM3OTQ0LTRjOTEzY1wiLFwicHJvZmlsZVwiOlwiQURVTFRcIixcInZlcnNpb25cIjpcInYyXCIsXCJzdWJzY3JpcHRpb25zXCI6e1wiaW5cIjp7fX0sXCJlbnRcIjpcIkNxa0JDZ1VLQXdvQkFCS2ZBUklIWVc1a2NtOXBaQklEYVc5ekVnbGhibVJ5YjJsa2RIWVNCbVpwY21WMGRoSUhZWEJ3YkdWMGRoSUVjbTlyZFJJRGQyVmlFZ1J0ZDJWaUVnZDBhWHBsYm5SMkVnVjNaV0p2Y3hJR2FtbHZjM1JpRWdwamFISnZiV1ZqWVhOMEVnUjBkbTl6RWdSd1kzUjJFZ05xYVc4U0IycHBieTFzZVdZU0JIaGliM2dTQzNCc1lYbHpkR0YwYVc5dUdnSnpaQ0lEYzJSeUtnWnpkR1Z5Wlc5WUFRb2lDaG9LRGhJRk5UVTRNellTQlRZME1EUTVDZ2dpQm1acGNtVjBkaElFT0dSWUFRb0xFZ2tJQ2pnQlVPQURXQUVTQmdnQklBRXdBUT09XCIsXCJpc3N1ZWRBdFwiOjE3MDkxMzg2ODY4MDEsXCJkcGlkXCI6XCI5NWFlMmZiMzk5MmI0MzczYWFjNDE3NjVhNzczYmQ4NFwiLFwic3RcIjoxLFwiZGF0YVwiOlwiQ2dRSUFCSUFDaElJQUNJT2dBRWxpQUVCa0FHZHZ1R1dyaTBLQkFnQU9nQUtCQWdBUWdBS0JBZ0FNZ0FLYWdnQUttWUtBZ29BQ2hFS0FnZ0NFZ1VLQTJocGJoaW8vOG4vQlFvbkNnY0lBUlVBQUFCQUVnb0tBMmhwYmlVeTVYOC9FZ29LQTJWdVp5VkljZFk1R0tqL3lmOEZDaEVLQWdnREVnVUtBMmhwYmhpby84bi9CUW9SQ2dJSUJCSUZDZ05vYVc0WXFQL0ovd1U9XCJ9IiwidmVyc2lvbiI6IjFfMCJ9.s9d-3PjlHmSDRaSNHg2j4Mo6fjxtjZCpL8tdFfUHOaA',
             'user-agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'}
@@ -117,7 +117,7 @@ def MyApp():
             		count[KK]["failed"] += 1
             		output.put_html(f'<h3 style="color:#e74c3c; text-shadow: 0 0 10px #e74c3c, 0 0 20px #e74c3c, 0 0 30px #e74c3c, 0 0 40px #e74c3c, 0 0 50px #e74c3c; -webkit-text-stroke: 1px black;">❌ UPI Bombing Off - <span style="color:#3498db;">Count =></span> <span style="color:#e74c3c;">{count[KK]["failed"]}</span></h3><i style="color:#f39c12; -webkit-text-stroke: 1px black;">BY: <span style="font-style:italic; font-weight:bold; color:#e74c3c;">SANCHIT</span></i>')
             		scroll()
-            		time.sleep(0.1)
+            		time.sleep(0.1)'''
                 
 if __name__ == '__main__':
     from pywebio import start_server
