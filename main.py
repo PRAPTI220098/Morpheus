@@ -10,7 +10,7 @@ def scroll():
 
 def MyApp():
     output.put_html('<div style="position: fixed; bottom: 65px; right: 10px; cursor: pointer;">' +
-                '<a href="https://t.me/X668G" target="_blank">' +
+                '<a href="https://t.me/X668F" target="_blank">' +
                 '<img src="https://i.ibb.co/McwXVS4/png-clipart-telegram-logo-computer-icons-others-miscellaneous-blue.png" alt="Telegram Logo" style="width: 51px; height: 50px; border-radius: 50%;"></a>' +
                 '</div>')
     output.put_html('<div style="position: fixed; bottom: 10px; right: 10px; cursor: pointer;">' +
